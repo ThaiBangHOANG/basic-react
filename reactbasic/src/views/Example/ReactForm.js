@@ -1,5 +1,6 @@
 import React from "react";
-import ChildComponent from "./ChildComponent";
+// import ChildComponent from "./ChildComponent";
+import ShowHide from "./ShowHide";
 
 class ReactForm extends React.Component {
   state = {
@@ -34,14 +35,14 @@ class ReactForm extends React.Component {
     return (
       <>
         <form>
-          <label for="htmlFor">First Name: </label> <br /> <br />
+          <label htmlFor="fname">First Name: </label> <br /> <br />
           <input
             type="text"
             value={this.state.firstName}
             onChange={(event) => this.handleChangeFirstName(event)}
           />{" "}
           <br /> <br />
-          <label for="htmlFor">Last Name: </label> <br /> <br />
+          <label htmlFor="fname">Last Name: </label> <br /> <br />
           <input
             type="text"
             value={this.state.lastName}
@@ -50,13 +51,14 @@ class ReactForm extends React.Component {
           <br /> <br />
           <input type="submit" onClick={(event) => this.handleSubmit(event)} />
         </form>
-
+        {/* 
         <ChildComponent
           firstName={this.state.firstName}
           lastName={this.state.lastName}
           job={this.state.job}
           arrPeople={this.state.arrPeople}
-        />
+        /> */}
+        <ShowHide arrPeople={this.state.arrPeople} />
       </>
     );
   }

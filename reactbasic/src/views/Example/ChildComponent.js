@@ -1,7 +1,7 @@
 import React from "react";
 
-class ChildComponent extends React.Component {
-  state = {
+/* class ChildComponent extends React.Component {
+  /* state = {
     firstName: "",
     lastName: "",
     job: "Dev",
@@ -27,8 +27,8 @@ class ChildComponent extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-  };
-
+  }; */
+/* 
   render() {
     let { firstName, lastName, job, arrPeople } = this.props;
 
@@ -47,6 +47,25 @@ class ChildComponent extends React.Component {
       </>
     );
   }
-}
+} */
+
+const ChildComponent = (props) => {
+  let { arrPeople } = props;
+  return (
+    <>
+      <div className="arr-people" key={arrPeople.id}>
+        {arrPeople.map((item, index) => {
+          if (item.salary >= "4k") {
+            return (
+              <div key={item.id}>
+                {item.post} - {item.salary}
+              </div>
+            );
+          }
+        })}
+      </div>
+    </>
+  );
+};
 
 export default ChildComponent;

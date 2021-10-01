@@ -16,6 +16,10 @@ class ButtonShowHide extends React.Component {
     });
   };
 
+  handleOnclickDelete = (post) => {
+    this.props.deletePost(post);
+  };
+
   render() {
     let { arrEmplois } = this.props;
     let { show } = this.state;
@@ -35,7 +39,10 @@ class ButtonShowHide extends React.Component {
                 return (
                   <>
                     <div key={item.id}>
-                      {item.post} - {item.salary}
+                      {item.post} - {item.salary} <> </>
+                      <span onClick={() => this.handleOnclickDelete(item)}>
+                        x
+                      </span>
                     </div>
                   </>
                 );

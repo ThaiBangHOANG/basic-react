@@ -13,7 +13,21 @@ class ComponentTop extends React.Component {
 
   addNewPost = (post) => {
     this.setState({
-      arrEmplois: [...this.state.arrEmplois, post],
+      arrEmplois: [...this.state.arrEmplois, post], // xet toan bo arrEmplois sau do cho them post moi vao arr
+    });
+    // **********another way to code this part*********
+    // let currentPost = this.state.arrEmplois;
+    // currentPost.push(post);
+    // this.setState({
+    // arrEmplois: currentPost
+    // })
+  };
+
+  deletePost = (post) => {
+    let currentPost = this.state.arrEmplois;
+    currentPost = currentPost.filter((item) => item.id !== post.id);
+    this.setState({
+      arrEmplois: currentPost,
     });
   };
 
@@ -22,7 +36,10 @@ class ComponentTop extends React.Component {
       <>
         <SubComponent addNewPost={this.addNewPost} />
 
-        <ButtonShowHide arrEmplois={this.state.arrEmplois} />
+        <ButtonShowHide
+          arrEmplois={this.state.arrEmplois}
+          deletePost={this.deletePost}
+        />
       </>
     );
   }

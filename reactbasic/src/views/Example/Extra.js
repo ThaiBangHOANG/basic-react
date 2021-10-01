@@ -1,8 +1,6 @@
 import React from "react";
-// import ChildComponent from "./ChildComponent";
-import ShowHide from "./ShowHide";
 
-class ReactForm extends React.Component {
+class Extra extends React.Component {
   state = {
     firstName: "",
     lastName: "",
@@ -13,6 +11,12 @@ class ReactForm extends React.Component {
       { id: "Peter", sex: "F", post: "Ana", salary: "4k" },
       { id: "Max", sex: "M", post: "Tes", salary: "5k" },
     ],
+  };
+
+  addNewPost = (post) => {
+    this.setSatate({
+      arrPeople: this.state.arrPeople.push(post),
+    });
   };
 
   handleChangeFirstName = (event) => {
@@ -41,7 +45,7 @@ class ReactForm extends React.Component {
             value={this.state.firstName}
             onChange={(event) => this.handleChangeFirstName(event)}
           />
-          <br />
+          <br /> <br />
           <label htmlFor="fname">Last Name: </label> <br /> <br />
           <input
             type="text"
@@ -51,17 +55,9 @@ class ReactForm extends React.Component {
           <br /> <br />
           <input type="submit" onClick={(event) => this.handleSubmit(event)} />
         </form>
-        {/* 
-        <ChildComponent
-          firstName={this.state.firstName}
-          lastName={this.state.lastName}
-          job={this.state.job}
-          arrPeople={this.state.arrPeople}
-        /> */}
-        <ShowHide arrPeople={this.state.arrPeople} />
       </>
     );
   }
 }
 
-export default ReactForm;
+export default Extra;

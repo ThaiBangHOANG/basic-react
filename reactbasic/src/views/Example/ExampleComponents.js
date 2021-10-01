@@ -1,9 +1,10 @@
 import React from "react";
+import ReactForm from "./ReactForm";
 
 class ExampleComponents extends React.Component {
   state = {
     name: "Thai Bang",
-    channel: "bangbang",
+    channel: "bang",
   };
 
   hanldOnChangeName = (event) => {
@@ -40,6 +41,7 @@ class ExampleComponents extends React.Component {
           </button>
         </div>{" "}
         <br />
+        <ReactForm />
       </>
     );
   }

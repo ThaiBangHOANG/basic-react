@@ -1,17 +1,15 @@
 import logo from "./logo.svg";
 import "./App.scss";
-import ExampleComponents from "./Example/ExampleComponents";
-import ReactForm from "./Example/ReactForm";
+import ComponentTop from "./Components/ComponentTop";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>React Basic</p>
+        <p>Developers form and Salaries</p>
 
-        <ExampleComponents />
-        <ReactForm />
+        <ComponentTop />
       </header>
     </div>
   );

@@ -1,17 +1,38 @@
 import logo from "./logo.svg";
 import "./App.scss";
-import ComponentTop from "./Components/ComponentTop";
+import Navigation from "./Navigation/Navigation";
+import "./Navigation/Navigation.scss";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import Home from "./Components/Home";
+import News from "./Components/News";
+import Contact from "./Components/Contact";
+import About from "./Components/About";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Developers form and Salaries</p>
+    <BrowserRouter>
+      <div className="App">
+        <header className="App-header">
+          <Navigation />
+          <img src={logo} className="App-logo" alt="logo" />
 
-        <ComponentTop />
-      </header>
-    </div>
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/news">
+              <News />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+          </Switch>
+        </header>
+      </div>
+    </BrowserRouter>
   );
 }
 

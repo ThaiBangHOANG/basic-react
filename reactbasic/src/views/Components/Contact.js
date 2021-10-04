@@ -1,6 +1,7 @@
 import React from "react";
+import Color from "../HigherOrderComponent/RandomColor";
 
-class Home extends React.Component {
+class Contact extends React.Component {
   render() {
     return (
       <div>
@@ -11,4 +12,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Color(Contact);

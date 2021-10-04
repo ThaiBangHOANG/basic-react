@@ -1,6 +1,14 @@
 import React from "react";
+// import { withRouter } from "react-router";
+import Color from "../HigherOrderComponent/RandomColor";
 
 class Home extends React.Component {
+  componentDidMount() {
+    // setTimeout(() => {
+    //   this.props.history.push("/about");
+    // }, 3000);
+  }
+
   render() {
     return (
       <div>
@@ -11,4 +19,5 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+// export default withRouter(Home);
+export default Color(Home);

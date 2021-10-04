@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.scss";
 import Navigation from "./Navigation/Navigation";
 import "./Navigation/Navigation.scss";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import News from "./Components/News";
 import Contact from "./Components/Contact";

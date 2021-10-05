@@ -7,6 +7,7 @@ import Home from "./Components/Home";
 import News from "./Components/News";
 import Contact from "./Components/Contact";
 import About from "./Components/About";
+import ListUsers from "./Axios/ListUsers";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+            <Route path="/user">
+              <ListUsers />
             </Route>
           </Switch>
         </header>

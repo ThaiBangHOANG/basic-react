@@ -8,6 +8,7 @@ import News from "./Components/News";
 import Contact from "./Components/Contact";
 import About from "./Components/About";
 import ListUsers from "./Axios/ListUsers";
+import DetailUser from "./Axios/DetailUser";
 
 function App() {
   return (
@@ -30,8 +31,11 @@ function App() {
             <Route path="/about">
               <About />
             </Route>
-            <Route path="/user">
+            <Route path="/user" exact>
               <ListUsers />
+            </Route>
+            <Route path="/user/:id">
+              <DetailUser />
             </Route>
           </Switch>
         </header>

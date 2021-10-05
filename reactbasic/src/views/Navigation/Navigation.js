@@ -17,7 +17,7 @@ class Navigation extends React.Component {
         <NavLink to="/about" activeClassName="active">
           About
         </NavLink>
-        <NavLink to="/user" activeClassName="active">
+        <NavLink to="/user" exact activeClassName="active">
           Users
         </NavLink>
       </div>

@@ -17,7 +17,7 @@ class ListUsers extends React.Component {
 
   // another way to use axios that is using async/await
   async componentDidMount() {
-    let res = await axios.get("https://reqres.in/api/users?page=2");
+    let res = await axios.get("https://reqres.in/api/users?page=1");
     this.setState({
       listUsers: res && res.data && res.data.data ? res.data.data : [],
     });
